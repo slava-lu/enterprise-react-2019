@@ -7,7 +7,7 @@ i18n
   .use(reactI18nextModule)
   .init({
     backend: {
-      loadPath: '/translations/locales/{{lng}}/{{ns}}.json',
+      loadPath: 'translations/locales/{{lng}}/{{ns}}.json',
     },
     fallbackLng: 'en',
     ns: ['translations'],

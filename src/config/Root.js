@@ -11,7 +11,7 @@ class Root extends Component {
   render() {
     return (
       <Provider store={store}>
-        <Router>
+        <Router basename={process.env.PUBLIC_URL}>
           <MuiThemeProvider theme={theme}>
             <App />
           </MuiThemeProvider>

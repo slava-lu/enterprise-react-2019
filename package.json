@@ -1,6 +1,7 @@
 {
-  "name": "enterprise",
-  "version": "0.1.0",
+  "name": "enterprise-react",
+  "homepage": "https://slava-lu.github.io/enterprise-react/",
+  "version": "1.0.1",
   "private": true,
   "dependencies": {
     "@material-ui/core": "^3.0.1",
@@ -33,6 +34,11 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "lint": "eslint src --ext .js,.jsx"
+    "lint": "eslint src --ext .js,.jsx",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
+  },
+  "devDependencies": {
+    "gh-pages": "^2.0.0"
   }
 }
