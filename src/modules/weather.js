@@ -1,4 +1,5 @@
-import { all, call, put, takeEvery, takeLatest } from 'redux-saga/effects';
+import { all, race, call, put, takeEvery, takeLatest } from 'redux-saga/effects';
+import { delay } from 'redux-saga';
 
 import { getCurrentWeatherApi } from '../api/weatherApi';
 
@@ -41,16 +42,24 @@ const getCurrentWeatherSaga = function* (action) {
   yield put({ type: GET_CURRENT_WEATHER_REQUEST, cityCode });
   try {
     const result = yield call(getCurrentWeatherApi, cityCode);
-    if (result.response.ok) {
+
+    /*  const { result, timeout } = yield race({
+      result: call(getCurrentWeatherApi, cityCode),
+      timeout: delay(100)
+    }) */
+
+    if (result && result.response.ok) {
       const currentWeather = result.data;
       console.log('currentWeather', currentWeather)
       yield put({ type: GET_CURRENT_WEATHER_SUCCESS, currentWeather });
       yield call(history.push, '/current');
     } else {
-      const { error } = result;
+      const error = result ? result.error : 'Timeout';
+      console.log(error)
       yield put({ type: GET_CURRENT_WEATHER_FAILURE, error });
     }
   } catch (error) {
+    console.log(error)
     yield put({ type: GET_CURRENT_WEATHER_FAILURE, error });
   }
 };
