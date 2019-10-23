@@ -47,13 +47,13 @@ class CurrentWeather extends Component {
     const { weather, common: { language } } = this.props;
     const locale = language === 'de' ? deLocale : enLocale;
 
-    const temperature = get(weather, ['currentWeather', 'current', 'temp_c'], ' ');
+    const temperature = get(weather, ['currentWeather', 'current', 'temperature'], ' ');
     const humidity = get(weather, ['currentWeather', 'current', 'humidity'], ' ');
-    const wind = get(weather, ['currentWeather', 'current', 'wind_kph'], ' ');
+    const wind = get(weather, ['currentWeather', 'current', 'wind_speed'], ' ');
     const city = get(weather, ['currentWeather', 'location', 'name'], ' ');
     const country = get(weather, ['currentWeather', 'location', 'country'], ' ');
-    const iconUrl = get(weather, ['currentWeather', 'current', 'condition', 'icon'], ' ');
-    const lastUdated = get(weather, ['currentWeather', 'current', 'last_updated_epoch'], ' ');
+    const iconUrl = get(weather, ['currentWeather', 'current', 'weather_icons', '0'], ' ');
+    const lastUdated = get(weather, ['currentWeather', 'location', 'localtime_epoch'], ' ');
 
     return (
       <Card className={classes.card}>

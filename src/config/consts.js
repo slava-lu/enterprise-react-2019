@@ -1,5 +1,5 @@
 export const WEATHER_API_KEY = {
-  key: '584c30a564ef4fc98a782053180609'
+  access_key: '610150a7e95c1c8a9246fea071f80210'
 };
 
-export const CURRENT_WEATHER_URL = 'https://api.apixu.com/v1/current.json';
+export const CURRENT_WEATHER_URL = 'http://api.weatherstack.com/current';

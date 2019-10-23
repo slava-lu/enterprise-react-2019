@@ -86,7 +86,6 @@ export const sendDataWithParams = (baseUrl, method, params, bodyObj) => {
     cache: 'default',
     redirect: 'follow',
     headers: {
-      'Content-Type': 'application/json',
       'Accept': 'application/json',
     },
     body: bodyObj ? JSON.stringify(bodyObj) : null,
