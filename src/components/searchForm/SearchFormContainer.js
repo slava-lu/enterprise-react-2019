@@ -45,7 +45,7 @@ class SearchFormContainer extends Component {
 }
 
 export default compose(
-  reduxForm({ form: 'search', initialValues: { city: 'LHR' }, destroyOnUnmount: false }),
+  reduxForm({ form: 'search', initialValues: { city: '2643743' }, destroyOnUnmount: false }),
   connect(null, { requestCurrentWeather }),
   withStyles(styles),
   translate()
