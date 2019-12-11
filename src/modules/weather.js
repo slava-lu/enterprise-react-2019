@@ -1,4 +1,4 @@
-import { all, call, put, takeEvery,  } from 'redux-saga/effects';
+import { all, call, put, takeEvery } from 'redux-saga/effects';
 
 
 import { getCurrentWeatherApi } from '../api/weatherApi';
@@ -50,7 +50,6 @@ const getCurrentWeatherSaga = function* (action) {
 
     if (result && result.response.ok) {
       const currentWeather = result.data;
-      console.log('currentWeather', currentWeather)
       yield put({ type: GET_CURRENT_WEATHER_SUCCESS, currentWeather });
       yield call(history.push, '/current');
     } else {
