@@ -4,6 +4,7 @@
 This is the React stack you need to build a scalable reliable and nice looking SPA you will be proud of.
 Read more about this example in my article on [medium](https://medium.com/@viacheslavlushchinskiy/enterprise-react-in-2018-2019-ae6c80c03f1).
 
+You can see this app in action on github pages [here](https://slava-lu.github.io/enterprise-react/).
 ## Motivation
 React ecosystem is changing rapidly as well as the whole frontend development area. Compared to the previous years, developers tend to focus more on the business functionality rather than on tweaking webpack and CSS. 
 
@@ -17,5 +18,5 @@ You may also read the accompanying article to make the first step into the 'real
 * run `yarn start` to start the app.
 * run `yarn run build` to build a production app.
 
-You can see this app in action on github pages [here](https://slava-lu.github.io/enterprise-react/).
+
 
