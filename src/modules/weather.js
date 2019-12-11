@@ -1,5 +1,5 @@
-import { all, race, call, put, takeEvery, takeLatest } from 'redux-saga/effects';
-import { delay } from 'redux-saga';
+import { all, call, put, takeEvery,  } from 'redux-saga/effects';
+
 
 import { getCurrentWeatherApi } from '../api/weatherApi';
 

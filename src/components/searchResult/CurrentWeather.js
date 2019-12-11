@@ -47,13 +47,14 @@ class CurrentWeather extends Component {
     const { weather, common: { language } } = this.props;
     const locale = language === 'de' ? deLocale : enLocale;
 
-    const temperature = get(weather, ['currentWeather', 'current', 'temperature'], ' ');
-    const humidity = get(weather, ['currentWeather', 'current', 'humidity'], ' ');
-    const wind = get(weather, ['currentWeather', 'current', 'wind_speed'], ' ');
-    const city = get(weather, ['currentWeather', 'location', 'name'], ' ');
-    const country = get(weather, ['currentWeather', 'location', 'country'], ' ');
-    const iconUrl = get(weather, ['currentWeather', 'current', 'weather_icons', '0'], ' ');
-    const lastUdated = get(weather, ['currentWeather', 'location', 'localtime_epoch'], ' ');
+    const temperature = get(weather, ['currentWeather', 'main', 'temp'], ' ')
+    const humidity = get(weather, ['currentWeather', 'main', 'humidity'], ' ')
+    const wind = get(weather, ['currentWeather', 'wind', 'speed'], ' ')
+    const city = get(weather, ['currentWeather', 'name'], ' ')
+    const country = get(weather, ['currentWeather', 'location', 'country'], ' ')
+    const icon = get(weather, ['currentWeather', 'weather', '0', 'icon'], ' ')
+    const iconUrl = `https://openweathermap.org/img/wn/${icon}@2x.png`
+    const lastUpdated = get(weather, ['currentWeather', 'dt'], ' ')
 
     return (
       <Card className={classes.card}>
@@ -61,7 +62,7 @@ class CurrentWeather extends Component {
           className={classes.header}
           classes={{ title: classes.title }}
           title={`${city}, ${country}`}
-          subheader={`${t('last_updated')}: ${format(lastUdated * 1000, 'DD/MMM/YYYY HH:mm', { locale })}`}
+          subheader={`${t('last_updated')}: ${format(lastUpdated * 1000, 'DD/MMM/YYYY HH:mm', { locale })}`}
           avatar={
             <img src={iconUrl} alt="icon" />
           }
