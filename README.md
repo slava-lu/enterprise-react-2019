@@ -4,7 +4,7 @@
 This is the React stack you need to build a scalable reliable and nice looking SPA you will be proud of.
 Read more about this example in my article on [medium](https://medium.com/@viacheslavlushchinskiy/enterprise-react-in-2018-2019-ae6c80c03f1).
 
-You can see this app in action on github pages [here](https://slava-lu.github.io/enterprise-react/).
+You can see this app in action on github pages [here](https://slava-lu.github.io/enterprise-react-2019/).
 ## Motivation
 React ecosystem is changing rapidly as well as the whole frontend development area. Compared to the previous years, developers tend to focus more on the business functionality rather than on tweaking webpack and CSS. 
 
