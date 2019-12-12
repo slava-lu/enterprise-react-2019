@@ -53,12 +53,10 @@ const getCurrentWeatherSaga = function* (action) {
       yield put({ type: GET_CURRENT_WEATHER_SUCCESS, currentWeather });
       yield call(history.push, '/current');
     } else {
-      const error = result ? result.error : 'Timeout';
-      console.log(error)
+      const { error } = result
       yield put({ type: GET_CURRENT_WEATHER_FAILURE, error });
     }
   } catch (error) {
-    console.log(error)
     yield put({ type: GET_CURRENT_WEATHER_FAILURE, error });
   }
 };
