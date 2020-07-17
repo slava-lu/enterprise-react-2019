@@ -15,7 +15,7 @@
     "eslint-plugin-react": "^7.11.1",
     "i18next": "^11.6.0",
     "i18next-xhr-backend": "^1.5.1",
-    "lodash": "^4.17.10",
+    "lodash": "^4.17.19",
     "query-string": "5",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
